@@ -14,14 +14,15 @@
         float:left;
         width: 10%;
         padding: 20px;
-        height: 500px;
+        height: 1000px;
       }
       .column2 {
         float:left;//no idea
         width: 90%;
         padding: 20px;/* distance content is from all edges*/
-        height: 500px;/* distance column extends from top edge*/
-        word-wrap: break-word;
+        height: 1000px;/* distance column extends from top edge*/
+        inline-size: 90%;
+        overflow-wrap: break-word;
       }
 
       .row:after{
@@ -52,18 +53,40 @@
     <body>
     <div class="row">
       <div class="column1" style="background-color:lightblue">
-        <p> This column is a test to see if I can put hyper links on this side of my column and also to see how long my column will support a line of text.</p>
+        <h1>Alec's Websites</h1>
+
+
+        <menu>
+          <li>
+            <a href="https://github.com/Knobloch-design?tab=repositories"target="_blank">Github</a>
+          </li>
+        </menu>
+        <menu>
+          <li>
+            <a href="https://www.linkedin.com/in/alec-knobloch/"target="_blank">Linkedin</a>
+          </li>
+        </menu>
+
       </div>
 
       <div class="column2" style="background-color:grey">
         <h1>Alec's website</h1>
         <p>This website is a test bed to display different aspects of HTML I have learned. There will be parts that test Css and Javascript as well, and I hope to incorporate multiple different unrelated projects that I have worked on as well. </p>
-        <img src=file:///C:/Users/Alec/Pictures/html5_cheat_sheet_tags.png width = "400" height = "300" alt="My test image">
+        <img style = padding-bottom: 50px src=file:///C:/Users/Alec/Pictures/html5_cheat_sheet_tags.png width = "400" height = "300"  alt="My test image">
 
-
+        <p>
           <!--this is going to be a test project where I press a button and it wil display the number of days till I graduate-->
-        <!--<button type="button">Days till Alec's Graduation...</button>-->
 
+
+          <button type="button" onclick= "myFunction()" > Days till Alec's Graduation...</button>
+          <script>
+            function myFunction(){
+              document.getElementById("demo").innerHTML = Date();
+            }
+          </script>
+
+          <p id="demo"></p>
+        </p>
 
       </div>
     </div>
