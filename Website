@@ -7,28 +7,38 @@
       * {
         box-sizing: border-box;
       }
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      .column1 {
+      .Side-Menu{
         float:left;
         width: 10%;
-        padding: 20px;
         height: 1000px;
-      }
-      .column2 {
-        float:left;//no idea
-        width: 90%;
-        padding: 20px;/* distance content is from all edges*/
-        height: 1000px;/* distance column extends from top edge*/
-        inline-size: 90%;
-        overflow-wrap: break-word;
+        padding: 10px;
+        text-align: center;
       }
 
+      .main-body {
+        float:left;
+        text-align: center;
+        width: 90%;
+        padding-right: 200px;
+        padding-left: 200px;/* distance content is from left edges*/
+        height: 1000px;/* distance column extends from top edge*/
+        inline-size: 90%;
+        line-height: 1.5;
+        display: inline-block;
+        vertical-align: middle;
+        overflow-wrap: break-word;
+      }
+      .header {
+        text-align: center;
+        padding: 10px;
+      }
+
+      }
       .row:after{
         content: "";
         display: table;
         clear: both;
+
       }
       button {
         border: none;
@@ -41,6 +51,31 @@
         margin: 4px 2px;
         cursor: pointer;
       }
+      .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+      }
+      .active, .accordion:hover {
+        background-color: #ccc;
+      }
+      .panel {
+        padding: 40px;
+        display: none;
+        background-color: white;
+        overflow: hidden;
+        text-align: left;
+      }
+      body{
+        font-family:'Trebuchet MS', sans-serif;
+        font-size: 100;
+      }
       @media (max-width: 600px) {
         column1, column2 {
           width: 100%;
@@ -49,46 +84,90 @@
       }
     </style>
     <title>My test page</title>
-    </head>
+  </head>
     <body>
-    <div class="row">
-      <div class="column1" style="background-color:lightblue">
-        <h1>Alec's Websites</h1>
-
-
-        <menu>
-          <li>
-            <a href="https://github.com/Knobloch-design?tab=repositories"target="_blank">Github</a>
-          </li>
-        </menu>
-        <menu>
-          <li>
-            <a href="https://www.linkedin.com/in/alec-knobloch/"target="_blank">Linkedin</a>
-          </li>
-        </menu>
-
+      <div class="header" style="background-color:grey">
+        <h1>
+          Alec Knobloch
+        </h1>
       </div>
+      <div class="row">
+        <nav class="Side-Menu" style="background-color:">
+          <h1>Alec's Websites</h1>
+        <ol>
+            <a href="https://github.com/Knobloch-design?tab=repositories"target="_blank">Github</a>
+        </ol>
+        <ol>
+            <a href="https://www.linkedin.com/in/alec-knobloch/"target="_blank">Linkedin</a>
+        </ol>
 
-      <div class="column2" style="background-color:grey">
-        <h1>Alec's website</h1>
-        <p>This website is a test bed to display different aspects of HTML I have learned. There will be parts that test Css and Javascript as well, and I hope to incorporate multiple different unrelated projects that I have worked on as well. </p>
-        <img style = padding-bottom: 50px src=file:///C:/Users/Alec/Pictures/html5_cheat_sheet_tags.png width = "400" height = "300"  alt="My test image">
+
+        </nav>
+
+      <div class="main-body" >
+        <h2>About Me</h2>
+        <p>My Name is Alec Knobloch and I am a student at the University of Iowa studying Computer Science and Engineering. I love learning about computers and the how I am able to do some much today via the internet.
+        This website Is where I hope to show off my projects and post more detail into some of the reseach and effort that went into them. </p>
+
+        <!--<img style = padding-bottom: 50px src=file:///C:/Users/Alec/Pictures/html5_cheat_sheet_tags.png width = "400" height = "300"  alt="My test image">-->
 
         <p>
           <!--this is going to be a test project where I press a button and it wil display the number of days till I graduate-->
 
-
-          <button type="button" onclick= "myFunction()" > Days till Alec's Graduation...</button>
+          <button type="button" onclick= "myFunction()" style="color: black" > Days till Alec's Graduation...</button>
           <script>
             function myFunction(){
               document.getElementById("demo").innerHTML = Date();
             }
           </script>
 
-          <p id="demo"></p>
+          <p id="demo"> </p><!--button output area-->
         </p>
+        <h1>Projects</h1>
+        <button class="accordion">Bitcoin True Value Analysis</button>
+        <div class="panel">
+          <p> &emsp; &emsp; &emsp;We have all seen that crytocurrency prices can swing wildly at the drop at the of a hat but is so new as an asset class
+             that the vast majority of people don't understand how it works. Understanding what the factors that affect the price of
+             crytocurrencies like bitcoin are all built apon a protical call the 'Block Chain'. Block Chain means that every transaction
+             is recorded and publicly sharedy with everyone inside of any block, so that all transactions can be varified by the entire network.
+             The network can be thought about as a random third party that has a computer. They use their computer to add you transaction to a block
+             and then put said block at the top of the block chain. Every block will also contain a lock at the bottom who purpose is to ensure that it
+             is more difficult for naer-do-wells not at false blocks onto the top of the block chain. Every lock has a key however, so the goal
+             of every crytocurrency miner is to find that key before anyone else so they can claim a small portion of crytocurrency as a reward for their efforts.
+             Here in lies the crux of my quesiton, which is how much do it actually cost to find the key to put a new block on to the block chain.
+             The answer to this question is the theoretical bottom to the price of any crytocurrency as no miner is going to front the costs of all the
+             electricly it costs to run their computer if it is just going to lose them money.
+ </p>
+          <p></p>
+        </div>
 
+        <button class="accordion">Section 2</button>
+        <div class="panel">
+          <p>Lorem ipsum...</p>
+        </div>
+
+        <button class="accordion">Section 3</button>
+        <div class="panel">
+          <p>Lorem ipsum...</p>
+        </div>
       </div>
     </div>
   </body>
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+</script>
 </html>
