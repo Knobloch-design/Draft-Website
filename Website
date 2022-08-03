@@ -60,10 +60,21 @@
         text-align: left;
         border: none;
         outline: none;
+        font-size: 15px;
         transition: 0.4s;
       }
       .active, .accordion:hover {
         background-color: #ccc;
+      }
+      .accordion:after {
+        content: '\02795'; /* Unicode character for "plus" sign (+) */
+        font-size: 10px;
+        color: #777;
+        float: right;
+        margin-left: 5px;
+      }
+      .active:after {
+        content: "\2796"; /* Unicode character for "minus" sign (-) */
       }
       .panel {
         padding: 40px;
@@ -106,7 +117,7 @@
 
       <div class="main-body" >
         <h2>About Me</h2>
-        <p>My Name is Alec Knobloch and I am a student at the University of Iowa studying Computer Science and Engineering. I love learning about computers and the how I am able to do some much today via the internet.
+        <p>My name is Alec Knobloch and I am a student at the University of Iowa studying Computer Science and Engineering. I love learning about computers and the how I am able to do some much today via the internet.
         This website Is where I hope to show off my projects and post more detail into some of the reseach and effort that went into them. </p>
 
         <!--<img style = padding-bottom: 50px src=file:///C:/Users/Alec/Pictures/html5_cheat_sheet_tags.png width = "400" height = "300"  alt="My test image">-->
@@ -137,7 +148,7 @@
              Here in lies the crux of my quesiton, which is how much do it actually cost to find the key to put a new block on to the block chain.
              The answer to this question is the theoretical bottom to the price of any crytocurrency as no miner is going to front the costs of all the
              electricly it costs to run their computer if it is just going to lose them money.
- </p>
+        </p>
           <p></p>
         </div>
 
